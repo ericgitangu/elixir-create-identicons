@@ -2,6 +2,15 @@
 
 ## Cool little project that creates an [Identicon](https://en.wikipedia.org/wiki/Identicon)
 
+### Usage
+
+Use this utility to create unique Identicons from input strings." Find our identicon under [Identicons](./identicons/)
+
+``` bash
+    iex > Identicon.main("YOUR_STRING")
+    :ok
+```
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
