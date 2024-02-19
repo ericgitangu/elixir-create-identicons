@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.31.1">
+    <meta name="project" content="identicon v0.1.0">
+
+
+    <title>Identicon — identicon v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-43PMFBC7.js"></script>
+    <script src="dist/sidebar_items-4F3D391A.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-L4O5OK2K.js"></script>
+
+
+  </head>
+  <body data-type="modules" class="page-module">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<div class="background-layer"></div>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
+identicon
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+      <div class="top-search">
+        <div class="search-settings">
+          <form class="search-bar" action="search.html">
+            <label class="search-label">
+              <span class="sr-only">Search documentation of identicon</span>
+              <input name="q" type="text" class="search-input" placeholder="Search Documentation (press /)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </label>
+            <button type="submit" class="search-button" aria-label="Submit Search">
+              <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+            </button>
+            <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+              <i class="ri-close-line ri-lg" title="Cancel search"></i>
+            </button>
+          </form>
+          <div class="autocomplete">
+          </div>
+          <button class="icon-settings display-settings">
+            <i class="ri-settings-3-line"></i>
+            <span class="sr-only">Settings</span>
+          </button>
+        </div>
+
+      </div>
+
+<h1>
+
+  <span translate="no">Identicon</span> 
+  <small class="app-vsn" translate="no">(identicon v0.1.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>Provides functions for generating identicons.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#build_image/1" translate="no">build_image(image)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Updates the Identicon Image struct by building a new grid from the input hex list.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#build_pixel_map/1" translate="no">build_pixel_map(image)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Updates the Identicon Image struct with a new pixel_map field.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#draw_image/2" translate="no">draw_image(image, input)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Draws the image and saves it to a file with the input string as the file name under the folder ./identicons.{name}.png.
+Uses the :egd save implements to save the binary file to the location specified.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#filter_odd_squares/1" translate="no">filter_odd_squares(image)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Updates the Identicon Image struct by filtering the grid field to only include the even numbers.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#hash_input/1" translate="no">hash_input(input)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Hashes the input string and returns an updated <a href="Identicon.Image.html"><code class="inline">Identicon.Image</code></a> struct with the hashed input as the value for the <code class="inline">hex</code> field.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#main/1" translate="no">main(input)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>The main function that takes an input string and returns an Identicon image.
+Returns an Identicon image, with the :ok atom if the image was successfully saved to a file.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#mirror_image/1" translate="no">mirror_image(row)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Mirrors the input list and returns a new list with the mirrored elements appended to the original list.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#pick_color/1" translate="no">pick_color(image)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>  Picks the first three elements from the input list and updates the Identicon Image stuct with the new image field.</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="build_image/1">
+
+  <div class="detail-header">
+    <a href="#build_image/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">build_image(image)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> build_image(Identicon.Image.t()) :: Identicon.Image.t()</pre>
+
+      </div>
+
+<p>Updates the Identicon Image struct by building a new grid from the input hex list.</p><h2 id="build_image/1-examples" class="section-heading">
+  <a href="#build_image/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Identicon</span><span class="o">.</span><span class="n">build_image</span><span class="p" data-group-id="4775889746-1">(</span><span class="p" data-group-id="4775889746-2">%</span><span class="nc" data-group-id="4775889746-2">Identicon.Image</span><span class="p" data-group-id="4775889746-2">{</span><span class="ss">hex</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4775889746-3">[</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="mi">134</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">235</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">58</span><span class="p" data-group-id="4775889746-3">]</span><span class="p" data-group-id="4775889746-2">}</span><span class="p" data-group-id="4775889746-1">)</span><span class="w">
+</span><span class="p" data-group-id="4775889746-4">%</span><span class="nc" data-group-id="4775889746-4">Identicon.Image</span><span class="p" data-group-id="4775889746-4">{</span><span class="w">
+  </span><span class="ss">color</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
+  </span><span class="ss">grid</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4775889746-5">[</span><span class="p" data-group-id="4775889746-6">{</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="4775889746-6">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-7">{</span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4775889746-7">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-8">{</span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="4775889746-8">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-9">{</span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="4775889746-9">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-10">{</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="4775889746-10">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-11">{</span><span class="mi">134</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="4775889746-11">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-12">{</span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="4775889746-12">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-13">{</span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p" data-group-id="4775889746-13">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-14">{</span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="4775889746-14">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-15">{</span><span class="mi">134</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p" data-group-id="4775889746-15">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-16">{</span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p" data-group-id="4775889746-16">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-17">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p" data-group-id="4775889746-17">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-18">{</span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="4775889746-18">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-19">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p" data-group-id="4775889746-19">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-20">{</span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p" data-group-id="4775889746-20">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-21">{</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p" data-group-id="4775889746-21">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-22">{</span><span class="mi">83</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p" data-group-id="4775889746-22">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-23">{</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p" data-group-id="4775889746-23">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-24">{</span><span class="mi">83</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p" data-group-id="4775889746-24">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-25">{</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p" data-group-id="4775889746-25">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-26">{</span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p" data-group-id="4775889746-26">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-27">{</span><span class="mi">235</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p" data-group-id="4775889746-27">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-28">{</span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p" data-group-id="4775889746-28">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-29">{</span><span class="mi">235</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p" data-group-id="4775889746-29">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="4775889746-30">{</span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">24</span><span class="p" data-group-id="4775889746-30">}</span><span class="p" data-group-id="4775889746-5">]</span><span class="p">,</span><span class="w">
+    </span><span class="ss">hex</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4775889746-31">[</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="mi">134</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">235</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">58</span><span class="p" data-group-id="4775889746-31">]</span><span class="p" data-group-id="4775889746-4">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="build_pixel_map/1">
+
+  <div class="detail-header">
+    <a href="#build_pixel_map/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">build_pixel_map(image)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> build_pixel_map(Identicon.Image.t()) :: Identicon.Image.t()</pre>
+
+      </div>
+
+<p>Updates the Identicon Image struct with a new pixel_map field.</p><h2 id="build_pixel_map/1-examples" class="section-heading">
+  <a href="#build_pixel_map/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Identicon</span><span class="o">.</span><span class="n">build_pixel_map</span><span class="p" data-group-id="9178807993-1">(</span><span class="p" data-group-id="9178807993-2">%</span><span class="nc" data-group-id="9178807993-2">Identicon.Image</span><span class="p" data-group-id="9178807993-2">{</span><span class="ss">color</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9178807993-3">[</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p" data-group-id="9178807993-3">]</span><span class="p">,</span><span class="w"> </span><span class="ss">grid</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9178807993-4">[</span><span class="p" data-group-id="9178807993-5">{</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="9178807993-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-6">{</span><span class="mi">134</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="9178807993-6">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-7">{</span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="9178807993-7">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-8">{</span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="9178807993-8">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-9">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p" data-group-id="9178807993-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-10">{</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p" data-group-id="9178807993-10">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-11">{</span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="9178807993-11">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-12">{</span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p" data-group-id="9178807993-12">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-13">{</span><span class="mi">58</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p" data-group-id="9178807993-13">}</span><span class="p" data-group-id="9178807993-4">]</span><span class="p" data-group-id="9178807993-2">}</span><span class="p" data-group-id="9178807993-1">)</span><span class="w">
+</span><span class="p" data-group-id="9178807993-14">%</span><span class="nc" data-group-id="9178807993-14">Identicon.Image</span><span class="p" data-group-id="9178807993-14">{</span><span class="w">
+          </span><span class="ss">color</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9178807993-15">[</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p" data-group-id="9178807993-15">]</span><span class="p">,</span><span class="w">
+          </span><span class="ss">grid</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9178807993-16">[</span><span class="p" data-group-id="9178807993-17">{</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="9178807993-17">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-18">{</span><span class="mi">134</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="9178807993-18">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-19">{</span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="9178807993-19">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-20">{</span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="9178807993-20">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-21">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p" data-group-id="9178807993-21">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-22">{</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p" data-group-id="9178807993-22">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-23">{</span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="9178807993-23">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-24">{</span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p" data-group-id="9178807993-24">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-25">{</span><span class="mi">58</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p" data-group-id="9178807993-25">}</span><span class="p" data-group-id="9178807993-16">]</span><span class="p">,</span><span class="w">
+          </span><span class="ss">hex</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
+          </span><span class="ss">pixel_map</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9178807993-26">[</span><span class="w">
+            </span><span class="p" data-group-id="9178807993-27">{</span><span class="p" data-group-id="9178807993-28">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="9178807993-28">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-29">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="9178807993-29">}</span><span class="p" data-group-id="9178807993-27">}</span><span class="p">,</span><span class="w">
+            </span><span class="p" data-group-id="9178807993-30">{</span><span class="p" data-group-id="9178807993-31">{</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="9178807993-31">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-32">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="9178807993-32">}</span><span class="p" data-group-id="9178807993-30">}</span><span class="p">,</span><span class="w">
+            </span><span class="p" data-group-id="9178807993-33">{</span><span class="p" data-group-id="9178807993-34">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="9178807993-34">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-35">{</span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="9178807993-35">}</span><span class="p" data-group-id="9178807993-33">}</span><span class="p">,</span><span class="w">
+            </span><span class="p" data-group-id="9178807993-36">{</span><span class="p" data-group-id="9178807993-37">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="9178807993-37">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-38">{</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p" data-group-id="9178807993-38">}</span><span class="p" data-group-id="9178807993-36">}</span><span class="p">,</span><span class="w">
+            </span><span class="p" data-group-id="9178807993-39">{</span><span class="p" data-group-id="9178807993-40">{</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="9178807993-40">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-41">{</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p" data-group-id="9178807993-41">}</span><span class="p" data-group-id="9178807993-39">}</span><span class="p">,</span><span class="w">
+            </span><span class="p" data-group-id="9178807993-42">{</span><span class="p" data-group-id="9178807993-43">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="9178807993-43">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-44">{</span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p" data-group-id="9178807993-44">}</span><span class="p" data-group-id="9178807993-42">}</span><span class="p">,</span><span class="w">
+            </span><span class="p" data-group-id="9178807993-45">{</span><span class="p" data-group-id="9178807993-46">{</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p" data-group-id="9178807993-46">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-47">{</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p" data-group-id="9178807993-47">}</span><span class="p" data-group-id="9178807993-45">}</span><span class="p">,</span><span class="w">
+            </span><span class="p" data-group-id="9178807993-48">{</span><span class="p" data-group-id="9178807993-49">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p" data-group-id="9178807993-49">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-50">{</span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p" data-group-id="9178807993-50">}</span><span class="p" data-group-id="9178807993-48">}</span><span class="p">,</span><span class="w">
+            </span><span class="p" data-group-id="9178807993-51">{</span><span class="p" data-group-id="9178807993-52">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p" data-group-id="9178807993-52">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9178807993-53">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p" data-group-id="9178807993-53">}</span><span class="p" data-group-id="9178807993-51">}</span><span class="w">
+          </span><span class="p" data-group-id="9178807993-26">]</span><span class="w">
+        </span><span class="p" data-group-id="9178807993-14">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="draw_image/2">
+
+  <div class="detail-header">
+    <a href="#draw_image/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">draw_image(image, input)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> draw_image(Identicon.Image.t(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: :ok</pre>
+
+      </div>
+
+<p>Draws the image and saves it to a file with the input string as the file name under the folder ./identicons.{name}.png.
+Uses the :egd save implements to save the binary file to the location specified.</p><h2 id="draw_image/2-examples" class="section-heading">
+  <a href="#draw_image/2-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Identicon</span><span class="o">.</span><span class="n">draw_image</span><span class="p" data-group-id="0593232435-1">(</span><span class="p" data-group-id="0593232435-2">%</span><span class="nc" data-group-id="0593232435-2">Identicon.Image</span><span class="p" data-group-id="0593232435-2">{</span><span class="ss">color</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0593232435-3">[</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p" data-group-id="0593232435-3">]</span><span class="p">,</span><span class="w"> </span><span class="ss">pixel_map</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0593232435-4">[</span><span class="p" data-group-id="0593232435-5">{</span><span class="p" data-group-id="0593232435-6">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="0593232435-6">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-7">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="0593232435-7">}</span><span class="p" data-group-id="0593232435-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-8">{</span><span class="p" data-group-id="0593232435-9">{</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="0593232435-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-10">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="0593232435-10">}</span><span class="p" data-group-id="0593232435-8">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-11">{</span><span class="p" data-group-id="0593232435-12">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="0593232435-12">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-13">{</span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="0593232435-13">}</span><span class="p" data-group-id="0593232435-11">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-14">{</span><span class="p" data-group-id="0593232435-15">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="0593232435-15">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-16">{</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p" data-group-id="0593232435-16">}</span><span class="p" data-group-id="0593232435-14">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-17">{</span><span class="p" data-group-id="0593232435-18">{</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="0593232435-18">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-19">{</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p" data-group-id="0593232435-19">}</span><span class="p" data-group-id="0593232435-17">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-20">{</span><span class="p" data-group-id="0593232435-21">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p" data-group-id="0593232435-21">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-22">{</span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p" data-group-id="0593232435-22">}</span><span class="p" data-group-id="0593232435-20">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-23">{</span><span class="p" data-group-id="0593232435-24">{</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p" data-group-id="0593232435-24">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-25">{</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p" data-group-id="0593232435-25">}</span><span class="p" data-group-id="0593232435-23">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-26">{</span><span class="p" data-group-id="0593232435-27">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p" data-group-id="0593232435-27">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-28">{</span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p" data-group-id="0593232435-28">}</span><span class="p" data-group-id="0593232435-26">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-29">{</span><span class="p" data-group-id="0593232435-30">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p" data-group-id="0593232435-30">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0593232435-31">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p" data-group-id="0593232435-31">}</span><span class="p" data-group-id="0593232435-29">}</span><span class="p" data-group-id="0593232435-4">]</span><span class="p" data-group-id="0593232435-2">}</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;elixir&quot;</span><span class="p" data-group-id="0593232435-1">)</span><span class="w">
+</span><span class="ss">:ok</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="filter_odd_squares/1">
+
+  <div class="detail-header">
+    <a href="#filter_odd_squares/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">filter_odd_squares(image)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Updates the Identicon Image struct by filtering the grid field to only include the even numbers.</p><h2 id="filter_odd_squares/1-examples" class="section-heading">
+  <a href="#filter_odd_squares/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Identicon</span><span class="o">.</span><span class="n">filter_odd_squares</span><span class="p" data-group-id="9351346974-1">(</span><span class="p" data-group-id="9351346974-2">%</span><span class="nc" data-group-id="9351346974-2">Identicon.Image</span><span class="p" data-group-id="9351346974-2">{</span><span class="ss">grid</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9351346974-3">[</span><span class="p" data-group-id="9351346974-4">{</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="9351346974-4">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-5">{</span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="9351346974-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-6">{</span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="9351346974-6">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-7">{</span><span class="mi">134</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="9351346974-7">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-8">{</span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="9351346974-8">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-9">{</span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="9351346974-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-10">{</span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="9351346974-10">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-11">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p" data-group-id="9351346974-11">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-12">{</span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="9351346974-12">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-13">{</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p" data-group-id="9351346974-13">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-14">{</span><span class="mi">83</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p" data-group-id="9351346974-14">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-15">{</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p" data-group-id="9351346974-15">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-16">{</span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="9351346974-16">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-17">{</span><span class="mi">235</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p" data-group-id="9351346974-17">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-18">{</span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p" data-group-id="9351346974-18">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-19">{</span><span class="mi">58</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p" data-group-id="9351346974-19">}</span><span class="p" data-group-id="9351346974-3">]</span><span class="p" data-group-id="9351346974-2">}</span><span class="p" data-group-id="9351346974-1">)</span><span class="w">
+</span><span class="p" data-group-id="9351346974-20">%</span><span class="nc" data-group-id="9351346974-20">Identicon.Image</span><span class="p" data-group-id="9351346974-20">{</span><span class="ss">color</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="ss">grid</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9351346974-21">[</span><span class="p" data-group-id="9351346974-22">{</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="9351346974-22">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-23">{</span><span class="mi">134</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="9351346974-23">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-24">{</span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="9351346974-24">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-25">{</span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="9351346974-25">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-26">{</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p" data-group-id="9351346974-26">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-27">{</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p" data-group-id="9351346974-27">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-28">{</span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="9351346974-28">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-29">{</span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p" data-group-id="9351346974-29">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9351346974-30">{</span><span class="mi">58</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p" data-group-id="9351346974-30">}</span><span class="p" data-group-id="9351346974-21">]</span><span class="p">,</span><span class="w"> </span><span class="ss">hex</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p" data-group-id="9351346974-20">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="hash_input/1">
+
+  <div class="detail-header">
+    <a href="#hash_input/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">hash_input(input)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> hash_input(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: Identicon.Image.t()</pre>
+
+      </div>
+
+<p>Hashes the input string and returns an updated <a href="Identicon.Image.html"><code class="inline">Identicon.Image</code></a> struct with the hashed input as the value for the <code class="inline">hex</code> field.</p><h2 id="hash_input/1-examples" class="section-heading">
+  <a href="#hash_input/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Identicon</span><span class="o">.</span><span class="n">hash_input</span><span class="p" data-group-id="6956340591-1">(</span><span class="s">&quot;elixir&quot;</span><span class="p" data-group-id="6956340591-1">)</span><span class="w">
+</span><span class="p" data-group-id="6956340591-2">%</span><span class="nc" data-group-id="6956340591-2">Identicon.Image</span><span class="p" data-group-id="6956340591-2">{</span><span class="ss">hex</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6956340591-3">[</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="mi">134</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">235</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">58</span><span class="p" data-group-id="6956340591-3">]</span><span class="p" data-group-id="6956340591-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="main/1">
+
+  <div class="detail-header">
+    <a href="#main/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">main(input)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>The main function that takes an input string and returns an Identicon image.
+Returns an Identicon image, with the :ok atom if the image was successfully saved to a file.</p><h2 id="main/1-examples" class="section-heading">
+  <a href="#main/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Identicon</span><span class="o">.</span><span class="n">main</span><span class="p" data-group-id="5571793806-1">(</span><span class="s">&quot;elixir&quot;</span><span class="p" data-group-id="5571793806-1">)</span><span class="w">
+</span><span class="ss">:ok</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="mirror_image/1">
+
+  <div class="detail-header">
+    <a href="#mirror_image/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">mirror_image(row)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> mirror_image(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()</pre>
+
+      </div>
+
+<p>Mirrors the input list and returns a new list with the mirrored elements appended to the original list.</p><h2 id="mirror_image/1-examples" class="section-heading">
+  <a href="#mirror_image/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Identicon</span><span class="o">.</span><span class="n">mirror_image</span><span class="p" data-group-id="3253439392-1">(</span><span class="p" data-group-id="3253439392-2">[</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p" data-group-id="3253439392-2">]</span><span class="p" data-group-id="3253439392-1">)</span><span class="w">
+</span><span class="p" data-group-id="3253439392-3">[</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">116</span><span class="p" data-group-id="3253439392-3">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="pick_color/1">
+
+  <div class="detail-header">
+    <a href="#pick_color/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">pick_color(image)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> pick_color(Identicon.Image.t()) :: Identicon.Image.t()</pre>
+
+      </div>
+
+<p>  Picks the first three elements from the input list and updates the Identicon Image stuct with the new image field.</p><p>  ## Examples</p><pre><code class="makeup elixir" translate="no"><span class="w">  </span><span class="gp unselectable">iex&gt; </span><span class="nc">Identicon</span><span class="o">.</span><span class="n">pick_color</span><span class="p" data-group-id="8763444664-1">(</span><span class="p" data-group-id="8763444664-2">%</span><span class="nc" data-group-id="8763444664-2">Identicon.Image</span><span class="p" data-group-id="8763444664-2">{</span><span class="ss">hex</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8763444664-3">[</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="mi">134</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">235</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">58</span><span class="p" data-group-id="8763444664-3">]</span><span class="p" data-group-id="8763444664-2">}</span><span class="p" data-group-id="8763444664-1">)</span><span class="w">
+  </span><span class="p" data-group-id="8763444664-4">%</span><span class="nc" data-group-id="8763444664-4">Identicon.Image</span><span class="p" data-group-id="8763444664-4">{</span><span class="ss">hex</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8763444664-5">[</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="mi">134</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">235</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">58</span><span class="p" data-group-id="8763444664-5">]</span><span class="p">,</span><span class="w"> </span><span class="ss">color</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8763444664-6">[</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p" data-group-id="8763444664-6">]</span><span class="p">,</span><span class="w"> </span><span class="ss">grid</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p" data-group-id="8763444664-4">}</span></code></pre>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+        <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="identicon.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.31.1) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+      </footer>
+    </div>
+  </div>
+</main>
+</div>
+
+
+  </body>
+</html>
